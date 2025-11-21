@@ -1,12 +1,13 @@
 #!/bin/bash
+set -euo pipefail
 
 # Universal Database Backup Script
 # Automatically detects and backs up the running database
 
-DB_NAME="myapp"
-DB_USER="appuser"
-DB_PASSWORD="dbuser123"
-DB_PORT="5000"
+DB_NAME="${POSTGRES_DB:-myapp}"
+DB_USER="${POSTGRES_USER:-appuser}"
+DB_PASSWORD="${POSTGRES_PASSWORD:-dbuser123}"
+DB_PORT="${POSTGRES_PORT:-5001}"
 
 # SQLite check and backup
 if [ -f "${DB_NAME}" ]; then
