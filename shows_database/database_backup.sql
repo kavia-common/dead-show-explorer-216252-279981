@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict jPCjeTnaOlhrXMJi3gG1bbBZ5pWcmq0KWfEDqutpcISzBAJ8Qbal9pcrenQONht
+\restrict jgpInpl3ScpsttFE0lqR5UKdu0iE6YwvjKqhRsyejA2mxL2xa2JkxXfP5fL1yqg
 
 -- Dumped from database version 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)
 -- Dumped by pg_dump version 16.10 (Ubuntu 16.10-0ubuntu0.24.04.1)
@@ -28,9 +28,9 @@ CREATE DATABASE myapp WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDE
 
 ALTER DATABASE myapp OWNER TO appuser;
 
-\unrestrict jPCjeTnaOlhrXMJi3gG1bbBZ5pWcmq0KWfEDqutpcISzBAJ8Qbal9pcrenQONht
+\unrestrict jgpInpl3ScpsttFE0lqR5UKdu0iE6YwvjKqhRsyejA2mxL2xa2JkxXfP5fL1yqg
 \connect myapp
-\restrict jPCjeTnaOlhrXMJi3gG1bbBZ5pWcmq0KWfEDqutpcISzBAJ8Qbal9pcrenQONht
+\restrict jgpInpl3ScpsttFE0lqR5UKdu0iE6YwvjKqhRsyejA2mxL2xa2JkxXfP5fL1yqg
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -150,10 +150,10 @@ ALTER TABLE public.users OWNER TO postgres;
 --
 
 COPY public.favorites (user_id, show_id, created_at) FROM stdin;
-1771ee0f-d81b-4730-931e-4dc2cd705a35	24ed7b3a-ab99-4ff6-81bb-05da5d306072	2025-11-21 18:47:58.056456+00
-1addd659-c6da-4ea2-b049-d7d0f138748d	24ed7b3a-ab99-4ff6-81bb-05da5d306072	2025-11-21 18:47:58.056456+00
-1771ee0f-d81b-4730-931e-4dc2cd705a35	c600395a-2645-41fd-bb1b-41733e5bda7f	2025-11-21 18:47:58.056456+00
-1addd659-c6da-4ea2-b049-d7d0f138748d	c600395a-2645-41fd-bb1b-41733e5bda7f	2025-11-21 18:47:58.056456+00
+9b660d70-27bc-42c8-a659-f5fa4d0f5224	807eab58-ff1b-45ff-abc1-20e63bf0941a	2025-11-22 04:12:37.466619+00
+ec648d5a-9409-4006-bba3-fdd5d02a2f0c	807eab58-ff1b-45ff-abc1-20e63bf0941a	2025-11-22 04:12:37.466619+00
+9b660d70-27bc-42c8-a659-f5fa4d0f5224	d6941930-db21-4e56-934a-1edeba7153e8	2025-11-22 04:12:37.466619+00
+ec648d5a-9409-4006-bba3-fdd5d02a2f0c	d6941930-db21-4e56-934a-1edeba7153e8	2025-11-22 04:12:37.466619+00
 \.
 
 
@@ -162,9 +162,9 @@ COPY public.favorites (user_id, show_id, created_at) FROM stdin;
 --
 
 COPY public.shows (id, show_date, venue, city, state, country, source, notes, created_at, updated_at) FROM stdin;
-24ed7b3a-ab99-4ff6-81bb-05da5d306072	1977-05-08	Barton Hall, Cornell University	Ithaca	NY	USA	SBD	Famous 5/8/77 show	2025-11-21 18:47:58.05174+00	2025-11-21 18:47:58.05174+00
-c600395a-2645-41fd-bb1b-41733e5bda7f	1972-05-26	Lyceum Theatre	London	\N	UK	SBD	Europe 72 closer	2025-11-21 18:47:58.05174+00	2025-11-21 18:47:58.05174+00
-f5b349aa-964d-4205-9eaf-21f422d68b1e	1989-07-07	John F. Kennedy Stadium	Philadelphia	PA	USA	SBD	Built to Last era	2025-11-21 18:47:58.05174+00	2025-11-21 18:47:58.05174+00
+807eab58-ff1b-45ff-abc1-20e63bf0941a	1977-05-08	Barton Hall, Cornell University	Ithaca	NY	USA	SBD	Famous 5/8/77 show	2025-11-22 04:12:37.46206+00	2025-11-22 04:12:37.46206+00
+d6941930-db21-4e56-934a-1edeba7153e8	1972-05-26	Lyceum Theatre	London	\N	UK	SBD	Europe 72 closer	2025-11-22 04:12:37.46206+00	2025-11-22 04:12:37.46206+00
+21d9c1aa-3203-4d0e-8f0d-30e562bfade6	1989-07-07	John F. Kennedy Stadium	Philadelphia	PA	USA	SBD	Built to Last era	2025-11-22 04:12:37.46206+00	2025-11-22 04:12:37.46206+00
 \.
 
 
@@ -173,15 +173,15 @@ f5b349aa-964d-4205-9eaf-21f422d68b1e	1989-07-07	John F. Kennedy Stadium	Philadel
 --
 
 COPY public.tracks (id, show_id, track_no, title, set_name, duration_seconds, created_at) FROM stdin;
-d9a24440-20d5-4121-b73d-2c1d09ea0a05	24ed7b3a-ab99-4ff6-81bb-05da5d306072	1	New Minglewood Blues	Set 1	325	2025-11-21 18:47:58.053661+00
-af1f6e17-8050-490e-9f6b-3e4309db2189	24ed7b3a-ab99-4ff6-81bb-05da5d306072	2	Loser	Set 1	365	2025-11-21 18:47:58.053661+00
-6e30966d-c05c-4427-bb91-fd2e5cba135a	24ed7b3a-ab99-4ff6-81bb-05da5d306072	3	El Paso	Set 1	292	2025-11-21 18:47:58.053661+00
-e2c3f591-e416-45ae-9d39-49a08251e4f4	c600395a-2645-41fd-bb1b-41733e5bda7f	1	The Promised Land	Set 1	200	2025-11-21 18:47:58.053661+00
-ff78c904-fae2-4d61-b505-b046e9b1d823	c600395a-2645-41fd-bb1b-41733e5bda7f	2	Sugaree	Set 1	420	2025-11-21 18:47:58.053661+00
-847dc839-3db1-46b3-b97e-dc17161db498	c600395a-2645-41fd-bb1b-41733e5bda7f	3	Mr. Charlie	Set 1	190	2025-11-21 18:47:58.053661+00
-365e571c-1b62-4a4a-ae74-03567c77dcd2	f5b349aa-964d-4205-9eaf-21f422d68b1e	1	Hell in a Bucket	Set 1	365	2025-11-21 18:47:58.053661+00
-e88c3484-03a8-40b9-8834-ddedb26c0f8a	f5b349aa-964d-4205-9eaf-21f422d68b1e	2	Iko Iko	Set 1	430	2025-11-21 18:47:58.053661+00
-eb3e6b68-969e-46c0-8905-dbda9a64186b	f5b349aa-964d-4205-9eaf-21f422d68b1e	3	Little Red Rooster	Set 1	480	2025-11-21 18:47:58.053661+00
+40556188-2999-4684-ae72-322adad6faa9	807eab58-ff1b-45ff-abc1-20e63bf0941a	1	New Minglewood Blues	Set 1	325	2025-11-22 04:12:37.463837+00
+931caf0a-71f7-4bbc-8c5a-ef829814ab7e	807eab58-ff1b-45ff-abc1-20e63bf0941a	2	Loser	Set 1	365	2025-11-22 04:12:37.463837+00
+2609ec7e-7ec2-44e5-b4ad-9c410c88d3a2	807eab58-ff1b-45ff-abc1-20e63bf0941a	3	El Paso	Set 1	292	2025-11-22 04:12:37.463837+00
+27c91009-b51d-419e-8b07-954c505f5ed6	d6941930-db21-4e56-934a-1edeba7153e8	1	The Promised Land	Set 1	200	2025-11-22 04:12:37.463837+00
+99c76147-9c40-405b-accd-fa9f375a595a	d6941930-db21-4e56-934a-1edeba7153e8	2	Sugaree	Set 1	420	2025-11-22 04:12:37.463837+00
+d48523d7-54eb-4878-a1be-b254aee64dd4	d6941930-db21-4e56-934a-1edeba7153e8	3	Mr. Charlie	Set 1	190	2025-11-22 04:12:37.463837+00
+f7729fcb-91a0-4c12-98cc-4b7214ae8476	21d9c1aa-3203-4d0e-8f0d-30e562bfade6	1	Hell in a Bucket	Set 1	365	2025-11-22 04:12:37.463837+00
+0f8089df-5ef6-43e7-8458-02b97a29d5c2	21d9c1aa-3203-4d0e-8f0d-30e562bfade6	2	Iko Iko	Set 1	430	2025-11-22 04:12:37.463837+00
+ae4a7d6b-6e05-4012-af9f-489bdd842135	21d9c1aa-3203-4d0e-8f0d-30e562bfade6	3	Little Red Rooster	Set 1	480	2025-11-22 04:12:37.463837+00
 \.
 
 
@@ -190,8 +190,8 @@ eb3e6b68-969e-46c0-8905-dbda9a64186b	f5b349aa-964d-4205-9eaf-21f422d68b1e	3	Litt
 --
 
 COPY public.users (id, email, display_name, password_hash, created_at, updated_at) FROM stdin;
-1771ee0f-d81b-4730-931e-4dc2cd705a35	jerry@example.com	Jerry Fan	demo-hash	2025-11-21 18:47:58.049125+00	2025-11-21 18:47:58.049125+00
-1addd659-c6da-4ea2-b049-d7d0f138748d	phil@example.com	Phil Fan	demo-hash	2025-11-21 18:47:58.049125+00	2025-11-21 18:47:58.049125+00
+9b660d70-27bc-42c8-a659-f5fa4d0f5224	jerry@example.com	Jerry Fan	demo-hash	2025-11-22 04:12:37.45957+00	2025-11-22 04:12:37.45957+00
+ec648d5a-9409-4006-bba3-fdd5d02a2f0c	phil@example.com	Phil Fan	demo-hash	2025-11-22 04:12:37.45957+00	2025-11-22 04:12:37.45957+00
 \.
 
 
@@ -488,5 +488,5 @@ ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public GRANT ALL ON TABLES 
 -- PostgreSQL database dump complete
 --
 
-\unrestrict jPCjeTnaOlhrXMJi3gG1bbBZ5pWcmq0KWfEDqutpcISzBAJ8Qbal9pcrenQONht
+\unrestrict jgpInpl3ScpsttFE0lqR5UKdu0iE6YwvjKqhRsyejA2mxL2xa2JkxXfP5fL1yqg
 
